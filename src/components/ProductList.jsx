@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard';
+import LoadingSpinner from './LoadingSpinner';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -35,7 +36,7 @@ const ProductList = () => {
         fetchProducts();
     }, []);
 
-    if (loading) return <div className="loading">Loading products...</div>;
+    if (loading) return <LoadingSpinner />;
 
     return (
         <div className="product-list">

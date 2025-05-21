@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import icons from '../assets/icons';
+import LoadingSpinner from './LoadingSpinner';
 
 const CategoryCarousel = () => {
     const [categories, setCategories] = useState([]);
+    const [loading,setLoading] = useState(true)
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -14,13 +16,18 @@ const CategoryCarousel = () => {
                 console.error('Error fetching categories:', error);
                 setCategories(['electronics', 'jewelery', "men's clothing", "women's clothing"]);
             }
+            finally {
+                setLoading(false);
+            }
         };
 
         fetchCategories();
     }, []);
+    if (loading) return <LoadingSpinner />;
 
     return (
         <div className="category-carousel p-4">
+           
             <h2 className="text-2xl font-semibold mb-4">Shop by Category</h2>
             <div className="categories grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {categories.map((category, index) => (

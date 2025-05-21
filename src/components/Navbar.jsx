@@ -16,7 +16,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link to="/" className="text-xl font-bold text-pink-600">
-                        Meesho
+                        Meesho Lite
                     </Link>
 
                     {/* Desktop Menu */}

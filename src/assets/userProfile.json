@@ -1,0 +1,25 @@
+{
+  "name": "Sachin Sharma",
+  "email": "ssharma0355@gmail.com",
+  "phone": "+91 9113704388",
+  "address": "HSR Layout, sector-3, Bangalore, Karnataka - 560001",
+  "card": {
+    "number": "**** **** **** 1234",
+    "expiry": "12/26",
+    "name": "Sachin Sharma"
+  },
+  "orders": [
+    {
+      "id": "ORD12345",
+      "item": "Wireless Headphones",
+      "amount": "$59.99",
+      "status": "Delivered"
+    },
+    {
+      "id": "ORD12346",
+      "item": "Smart Watch",
+      "amount": "$99.00",
+      "status": "Shipped"
+    }
+  ]
+}
