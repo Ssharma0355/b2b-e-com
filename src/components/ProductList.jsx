@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Import Link
 import ProductCard from './ProductCard';
 import LoadingSpinner from './LoadingSpinner';
 
@@ -14,6 +15,7 @@ const ProductList = () => {
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);
+                // fallback
                 setProducts([
                     {
                         id: 1,
@@ -39,11 +41,13 @@ const ProductList = () => {
     if (loading) return <LoadingSpinner />;
 
     return (
-        <div className="product-list">
-            <h2 className='text-2xl font-semibold mb-4'>Popular Products</h2>
-            <div className="products">
+        <div className="product-list px-4 py-8">
+            <h2 className="text-2xl font-semibold mb-4">Popular Products</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {products.map(product => (
-                    <ProductCard key={product.id} product={product} />
+                    <Link key={product.id} to={`/product/${product.id}`}>
+                        <ProductCard product={product} />
+                    </Link>
                 ))}
             </div>
         </div>
