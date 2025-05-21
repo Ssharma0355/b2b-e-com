@@ -39,7 +39,7 @@ const ProductList = () => {
 
     return (
         <div className="product-list">
-            <h2>Popular Products</h2>
+            <h2 className='text-2xl font-semibold mb-4'>Popular Products</h2>
             <div className="products">
                 {products.map(product => (
                     <ProductCard key={product.id} product={product} />
