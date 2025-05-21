@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-
 import './App.css'
 import Navbar from './components/Navbar';
 import CategoryCarousel from './components/CategoryCarousel';
@@ -14,18 +13,20 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/category' element={<CategoryCarousel />} />
-        <Route path='/productlist' element={<ProductList />} />
-        <Route path='/productcard' element={<ProductCard />} />
-        <Route path='/cart' element={<Cart />} />
-      </Routes>
-    </BrowserRouter>
+      <main className="flex-grow pt-16">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/category' element={<CategoryCarousel />} />
+          <Route path='/productlist' element={<ProductList />} />
+          <Route path='/productcard' element={<ProductCard />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
-export default App
+export default App;

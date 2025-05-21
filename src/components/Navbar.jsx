@@ -6,7 +6,7 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-white shadow-md fixed w-full z-10 top-0 left-0">
+        <nav className="bg-white shadow-md fixed w-full z-10 top-0 left-0 h-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
@@ -27,7 +27,7 @@ function Navbar() {
                         <Link to="/category" className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
                             Category
                         </Link>
-                      
+
                         <Link to="/cart" className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
                             <ShoppingCart />
                         </Link>
@@ -74,9 +74,9 @@ function Navbar() {
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50"
                         onClick={() => setIsOpen(false)}
                     >
-                       Cart
+                        Cart
                     </Link>
-                   
+
                 </div>
             )}
         </nav>
