@@ -1,13 +1,13 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import CategoryCarousel from '../components/CategoryCarousel';
+import ProductList from '../components/ProductList';
 
-function Home() {
-  return (
-    <div>
-       
-      <h1>Home page</h1>
-    </div>
-  )
-}
+const Home = () => {
+    return (
+        <div className="home-page">
+            <CategoryCarousel />
+            <ProductList />
+        </div>
+    );
+};
 
-export default Home
+export default Home;

@@ -1,12 +1,10 @@
-import React from 'react'
+const Profile = () => {
+    return (
+        <div className="profile-page">
+            <h1>Profile Page</h1>
+            <p>User profile information will be displayed here</p>
+        </div>
+    );
+};
 
-function Profile() {
-  return (
-    <div>
-        <h1>Profile page</h1>
-      
-    </div>
-  )
-}
-
-export default Profile
+export default Profile;

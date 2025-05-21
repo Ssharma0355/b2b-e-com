@@ -1,32 +1,25 @@
-import { useState } from 'react'
-import { Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
-import Profile from './pages/Profile';
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Categories from './pages/Categories'
+import Cart from './pages/Cart'
+import Profile from './pages/Profile'
 import './App.css'
-import Navbar from './components/Navbar';
-import CategoryCarousel from './components/CategoryCarousel';
-import ProductList from './components/ProductList';
-import ProductCard from './components/ProductCard';
-import Cart from './pages/Cart';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="app">
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className="main-content">
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/category' element={<CategoryCarousel />} />
-          <Route path='/productlist' element={<ProductList />} />
-          <Route path='/productcard' element={<ProductCard />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
     </div>
   )
 }
 
-export default App;
+export default App
